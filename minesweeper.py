@@ -23,5 +23,23 @@ def print_map(map1):
         print(" ".join(row))
 
 
+'''
+Determines the number of mines that will be generated (15-20 mines)
+and sets the locations of the mines in the mine map.
+'''
+def deploy_mines(map1):
+    num_mines = randint(15, 21)
+    mine_loc = []
+    for i in range(num_mines):
+        rand_x = randint(0, len(map1))
+        rand_y = rantint(0, len(map1))
+            
+
+# Testing
 print(str(size))
+print("")
+print("Game Map")
 print_map(game_map)
+print("\n")
+print("Mine map")
+print_map(game_mines)
