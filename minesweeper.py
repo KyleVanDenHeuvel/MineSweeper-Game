@@ -61,7 +61,12 @@ revealed--making the game now over.  If the player doesn't step on
 a mine, they can proceed to make another step.
 '''
 def make_step(int_x, int_y):
-
+    if (game_mines[int_y][int_x] == "X"):
+        print("GAME OVER \n\n")
+        end_map = game_map + list(set(game_mines) - set(game_map))
+        print_map(end_map)
+    else:
+        game_map[int_y][int_x] = "+"
             
 
 # Testing
