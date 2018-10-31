@@ -6,7 +6,8 @@ size = 10
 game_map = []
 # Creates a matrix to store where mines are located
 game_mines = []
-
+# Determines whether the game is over ("True" if the game is over)
+game_over = False
 
 #FIXME
 '''
@@ -61,8 +62,32 @@ revealed--making the game now over.  If the player doesn't step on
 a mine, they can proceed to make another step.
 '''
 def make_step(int_x, int_y):
-
+    if(game_mines[int_y][int_X] == "X"):
+        game_over = True
+        print("\n\n")
+        print_map(game_mines)
+        print("\nGAME OVER")
+    else:
+        game_map[int_y][int_x] = "+"
+        print("\n\n")
             
+
+'''
+Runs the game processes until the game is over (game_over == True).
+Instantiates the maps, deploys mines, and utilizes the function
+make_step to allow the player to take steps on the map.
+'''
+def game_run():
+    create_maps(size)
+    deploy_mines(game_mines)
+    while(game_over != True):
+        step_x = int(raw_input("Step X: "))
+        step_y = int(raw_input("step Y: "))
+        make_step(step_x, step_y)
+        # DEBUGGING
+        print_map(game_mines)
+
+
 
 # Testing
 
