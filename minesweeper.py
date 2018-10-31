@@ -70,6 +70,7 @@ def make_step(int_x, int_y):
     else:
         game_map[int_y][int_x] = "+"
         print("\n\n")
+        print_map(game_map)
             
 
 '''
