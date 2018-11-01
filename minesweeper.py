@@ -62,7 +62,7 @@ revealed--making the game now over.  If the player doesn't step on
 a mine, they can proceed to make another step.
 '''
 def make_step(int_x, int_y):
-    if(game_mines[int_y][int_X] == "X"):
+    if(game_mines[int_y][int_x] == "X"):
         game_over = True
         print("\n\n")
         print_map(game_mines)
@@ -81,15 +81,21 @@ make_step to allow the player to take steps on the map.
 def game_run():
     create_maps(size)
     deploy_mines(game_mines)
+    print_map(game_map)
     while(game_over != True):
-        step_x = int(raw_input("Step X: "))
-        step_y = int(raw_input("step Y: "))
+        step_x = int(input("Step X: ")) - 1
+        step_y = int(input("step Y: ")) - 1
         make_step(step_x, step_y)
         # DEBUGGING
+        print("\n")
         print_map(game_mines)
 
 
+# Testing - Full
+game_run()
 
+
+'''
 # Testing
 
 # Set map size to 8
@@ -112,3 +118,4 @@ print("\n")
 # Print mine map
 print("Mine map")
 print_map(game_mines)
+'''
